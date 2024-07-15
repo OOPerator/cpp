@@ -27,13 +27,13 @@ int main()
     cin >> increment; error_h(increment);
   }
   double i = 0;
-  if (max > 0)
+  if (max > 0)  // count up
     while (i < max)
     {
       i = i + increment;
       cout << "\t" << i << "\n";
     }
-  else if (max < 0)
+  else if (max < 0) // count down
   {
     while (i > max)
     {
