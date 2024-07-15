@@ -2,7 +2,7 @@
 using std::cin;
 using std::cout;
 
-void error_h(double &num)
+void error_h(double &num) //cin error helper
 {
   while (!num)
   {
