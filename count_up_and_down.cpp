@@ -1,7 +1,6 @@
 #include <iostream>
 using std::cin;
 using std::cout;
-
 void error_h(double &num) //cin error helper
 {
   while (!num)
@@ -20,8 +19,6 @@ int main()
   cin >> max; error_h(max);
   cout << "Count up or down by this number:\n";
   cin >> increment; error_h(increment);
-
-
   while (increment < 0)
   {
     cout << "Enter a positive number\n";
@@ -29,7 +26,6 @@ int main()
     cin.ignore(10000, '\n');
     cin >> increment; error_h(increment);
   }
-
   double i = 0;
   if (max > 0)
     while (i < max)
