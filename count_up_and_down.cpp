@@ -17,19 +17,17 @@ int main()
   double max;
   double increment;
   cout << "Number to count to (or enter negative number to count down):\n";
-  cin >> max;
-  error_h(max);
+  cin >> max; error_h(max);
   cout << "Count up or down by this number:\n";
-  cin >> increment;
-  error_h(increment);
+  cin >> increment; error_h(increment);
+
 
   while (increment < 0)
   {
     cout << "Enter a positive number\n";
     cin.clear();
     cin.ignore(10000, '\n');
-    cin >> increment;
-    error_h(increment); //race condition if not included again
+    cin >> increment; error_h(increment);
   }
 
   double i = 0;
