@@ -12,4 +12,5 @@ int main ()
    {
        std::cout<<chars[rand()%len];
    }
+   return 0;
 }
