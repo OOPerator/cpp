@@ -5,9 +5,9 @@
 int main ()
 {
    srand(time(NULL));
-   std::string chars = "abcdefghijklmnopqrstuvwrxyzABCDEFGHIJKLMNOPQRSTUVWRXYZ0123456789";
+   std::string chars{"0123456789"};
    int len = chars.length();
-   int num_chars = 8;
+   int num_chars = 4;
    for(int i=0;i<num_chars;i++)
    {
        std::cout<<chars[rand()%len];
