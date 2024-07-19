@@ -10,8 +10,8 @@ int main ()
     string table
 {"abcdefghijklmnopqrstuvwrxyzABCDEFGHIJKLMNOPQRSTUVWRXYZ0123456789"};
     int len = table.length();
-    int digits = 10;
-    for (int i=0;i<digits;i++)
+    int chars = 10;
+    for (int i=0;i<chars;i++)
     {
         cout<<table[rand()%len];
     }
