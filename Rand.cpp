@@ -2,8 +2,6 @@
 #include <string>
 #include <random>
 #include <algorithm>
-
-
 int main()
 {
     std::string table{"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"};
