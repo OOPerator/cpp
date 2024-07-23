@@ -1,18 +1,18 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
-using std::cout;
-using std::string;
+#include <random>
+#include <algorithm>
 
-int main ()
+
+int main()
 {
-    srand(time(NULL));
-    string table{"0123456789"};
-    int len = table.length();
-    int digits = 5;
-    for (int i=0;i<digits;i++)
+    std::string table{"0123456789"};
+    std::random_device rnd;
+    std::mt19937 gen(rnd());
+    std::shuffle(table.begin(),table.end(),gen);
+    for(int i=0;i<table.length();i++)
     {
-        cout<<table[rand()%len];
+        std::cout<<table[i];
     }
 return 0;
 }
