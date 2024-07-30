@@ -1,1 +1,1 @@
-learning C++, this is where I put code to reference later if I forget.
+learning C++, this is where I put code I write to reference later if I forget.
