@@ -1,18 +1,16 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-void sleep(int ms)
+void sleep(int MS)
 {
-    std::this_thread::sleep_for(std::chrono::milliseconds(ms));
+    std::this_thread::sleep_for(std::chrono::milliseconds(MS));
 }
 int main()
 {
     int count = 1;
-    do
+    while(count<21)
     {
-        sleep(100);
+        sleep(500);
         std::cout<<count++<<"\n";
     }
-    while(count<21);
-    return 0;
 }
