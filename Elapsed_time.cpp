@@ -9,7 +9,7 @@ int main()
         count++;
     }
     auto finish = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> elapsed = finish-start;
-    std::cout<<elapsed.count()<<"\n";
+    std::chrono::duration<double> time_elapsed = finish-start;
+    std::cout<<time_elapsed.count()<<"\n";
     return 0;
 }
