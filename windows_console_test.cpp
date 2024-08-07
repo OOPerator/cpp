@@ -24,7 +24,7 @@ void set_font_win32_console()
 int main()
 {
     set_font_win32_console();
-    std::string text0 = "Hello, this is a test program to print letters with a delay.\nPress the exit button to close.............";
+    std::string text0 = "Hello, this is a test program to print letters with a delay...........";
     while(true)
     {
         for(char i:text0)
