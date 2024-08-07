@@ -18,7 +18,7 @@ void set_font_windowsOS()
     cfi.FontWeight = FW_NORMAL;
     std::wcscpy(cfi.FaceName, L"Consolas");
     SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
-    system("Color 0A");
+    system("Color 0A");  //green
 }
 int main()
 {
