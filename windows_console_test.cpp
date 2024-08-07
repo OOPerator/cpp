@@ -8,7 +8,7 @@ void sleep(int ms)
 {
     std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 }
-void set_font_windowsOS()
+void set_font_win32_console()
 {
     CONSOLE_FONT_INFOEX cfi;
     cfi.cbSize = sizeof(cfi);
@@ -23,7 +23,7 @@ void set_font_windowsOS()
 }
 int main()
 {
-    set_font_windowsOS();
+    set_font_win32_console();
     std::string text0 = "Hello, this is a test program to print letters with a delay.\nPress the exit button to close.............";
     while(true)
     {
