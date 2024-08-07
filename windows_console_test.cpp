@@ -14,7 +14,7 @@ void set_font()
     cfi.nFont = 0;
     cfi.dwFontSize.X = 0;
     cfi.dwFontSize.Y = 30;
-    cfi.FontFamily = FF_DONTCARE;        //is it really called DONTCARE?
+    cfi.FontFamily = FF_DONTCARE;        //is it really called DONTCARE? I actually care though wtf.
     cfi.FontWeight = FW_NORMAL;
     std::wcscpy(cfi.FaceName, L"Consolas");
     SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
