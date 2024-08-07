@@ -1,6 +1,7 @@
 #include <iostream>
-#include <cwchar>
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#include <cwchar>
 #include <thread>
 #include <chrono>
 void sleep(int ms)
