@@ -2,15 +2,13 @@
 #include <chrono>
 int main()
 {
-    using namespace std;
-    auto start = chrono::high_resolution_clock::now();
-    int count = 0;
-    while(count<1000000000)
+    auto start = std::chrono::high_resolution_clock::now();
+    int n = 0;
+    while(n<1000000000)
     {
-        count++;
+        n++;
     }
-    auto finish = chrono::high_resolution_clock::now();
-    chrono::duration<double> elapsed = finish-start;
-    cout<<elapsed.count();
-    return 0;
+    auto finish = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = finish-start;
+    std::cout<<elapsed.count();
 }
