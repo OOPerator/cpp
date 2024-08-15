@@ -36,5 +36,5 @@ int main()
         }
         system("cls");
     }
-return 0;
+return 0; //will never happen lol
 }
