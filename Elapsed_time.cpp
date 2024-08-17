@@ -1,20 +1,23 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+
 void sleep(int ms)
 {
     std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 }
+
 int main()
 {
     auto start = std::chrono::high_resolution_clock::now();
-    int n = 1;
-    while(n<11)
+    int n = 0;
+    int count_to = 1000000000;
+    while(n<count_to)
     {
-        std::cout<<n++<<"\n";
-        sleep(1000);
+        n++;
     }
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish-start;
-    std::cout<<"time elapsed: "<<elapsed.count()<<" seconds";
+    std::cout<<"It took "<<elapsed.count()<<" seconds to count to "<<count_to;
+    return 0;
 }
