@@ -17,11 +17,12 @@ int main()
         b = placeholder;
     };
     
-    string x = "world";
-    string y = "boy";
+    string x = "99";
+    string y = "100";
+    cout<<x<<" "<<y<<"\n";
     swap(x,y);
-    pause(5000);
-    cout<<x<<" "<<y;
+    pause(3000);
+    cout<<x<<" "<<y<<"\n";
     
     return 0;
 }
