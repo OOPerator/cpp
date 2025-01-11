@@ -1,7 +1,14 @@
 #include <iostream>
-using std::string;
+#include <chrono>
+#include <thread>
+using namespace std;
 int main()
 {
+    auto pause = [](int ms)
+    {
+        this_thread::sleep_for(chrono::milliseconds(ms));
+    };
+    
     auto swap = [](string &a, string &b)
     {
         string placeholder;
@@ -10,9 +17,11 @@ int main()
         b = placeholder;
     };
     
-    string x = "door ";
-    string y = "boy ";
+    string x = "world";
+    string y = "boy";
     swap(x,y);
-    std::cout<<y<<x;
+    pause(5000);
+    cout<<x<<" "<<y;
+    
     return 0;
 }
