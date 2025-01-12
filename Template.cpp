@@ -3,11 +3,11 @@ using namespace std;
 
 template<typename N>
 void swap_out(N &value0, N &value1)
-   {
-        N placeholder = value0;
-        value0 = value1;
-        value1 = placeholder;
-   }
+{
+    N placeholder = value0;
+    value0 = value1;
+    value1 = placeholder;
+}
     
 int main()
 {
