@@ -14,7 +14,7 @@ int main()
     int a(20),b(10);
     swap_out(a,b);
     cout<<a<<" "<<b<<"\n";
-    std::string x("I am"),y("Yoda");
+    string x("I am"),y("Yoda");
     swap_out(x,y);
     cout<<x<<" "<<y<<"\n";
     return 0;
