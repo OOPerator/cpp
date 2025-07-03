@@ -1,17 +1,11 @@
 #include <iostream>
-#include <string>
 #include <random>
-#include <algorithm>
+#include <cstdint>
 int main()
 {
-    std::string table{"01234567890123456789"};
-    std::random_device rnd;
-    std::mt19937 gen(rnd());
-    std::shuffle(table.begin(),table.end(),gen);
-    int clamp = table.length();
-    for(int i=0;i<clamp;i++)
-    {
-        std::cout<<table[i];
-    }
-return 0;
+   std::mt19937 rng(std::random_device{}());
+   std::uniform_int_distribution<uint32_t> dist(0,UINT32_MAX);
+   std::cout<<dist(rng);
+    
+  return 0;
 }
