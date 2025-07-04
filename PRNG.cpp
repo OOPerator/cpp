@@ -2,12 +2,12 @@
 #include <random>
 #include <cstdint>
 using std::cout;
-int64_t getrand(const int64_t &begin, const int64_t &end)
+int64_t getrand(const int64_t &A, const int64_t &B)
 {
-    static std::random_device RD;
-    static std::mt19937 twister(RD());
+    static std::random_device rd;
+    static std::mt19937 twister(rd());
     static std::uniform_int_distribution<int64_t> dist;
-    dist.param(std::uniform_int_distribution<int64_t>::param_type(begin,end));
+    dist.param(std::uniform_int_distribution<int64_t>::param_type(A,B));
     return dist(twister);
 }
 
