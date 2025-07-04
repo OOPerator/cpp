@@ -5,7 +5,7 @@ using std::cout;
 int64_t getrand(const int64_t &A, const int64_t &B)
 {
     static std::random_device rd;
-    static std::mt19937 twister(rd());
+    static std::mt19937_64 twister(rd());
     static std::uniform_int_distribution<int64_t> dist;
     dist.param(std::uniform_int_distribution<int64_t>::param_type(A,B));
     return dist(twister);
