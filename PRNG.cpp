@@ -17,13 +17,21 @@ int64_t random(const int64_t &A, const int64_t &B)
 
 int main(void)
 {
-	std::string enter;
-	cout << "Press enter to generate a random 32 bit and 64 bit seed. Type c and then enter to clear screen.\n";
-	while (std::getline(cin, enter))
+	cout << "Press enter to generate a random 32 bit and 64 bit seed. Type any other key and then enter to clear screen.\n";
+	while (true)
 	{
-		cout << random(INT32_MIN, INT32_MAX) << "\n" << random(INT64_MIN, INT64_MAX)<<"\n";
-		if (enter == "c") {
+		std::string entry;
+		std::getline(cin, entry);
+		if (entry.empty()) {
+			cout << random(INT32_MIN, INT32_MAX) << "\n" << random(INT64_MIN, INT64_MAX) << "\n";
+		}
+		else if (entry == "q") {
 			system("cls");
+			break;
+		}
+		else {
+			system("cls");
+			cout << "Press enter to generate a random 32 bit and 64 bit seed. Type any other key and then enter to clear screen.\n";
 		}
 	}
 		return 0;
