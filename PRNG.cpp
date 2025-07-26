@@ -15,7 +15,7 @@ int64_t random(const int64_t &A, const int64_t &B)
 	return dist(twister);
 }
 
-int main(void)
+int main()
 {
 	cout << "Press enter to generate a random 32 bit and 64 bit seed. Type any other key and then enter to clear screen.\n";
 	while (true)
