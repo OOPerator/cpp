@@ -5,6 +5,8 @@
 #include <string>
 using std::cout;
 using std::cin;
+//void cls() {for (int i=0;i<100;++i) cout<<'\n';}
+
 int64_t random(const int64_t &A, const int64_t &B)
 {
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
