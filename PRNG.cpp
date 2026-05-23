@@ -24,7 +24,7 @@ int main()
 		if (entry.empty()) {
 			cout << random(INT32_MIN,INT32_MAX) << "\n" << random(INT64_MIN,INT64_MAX) << "\n";
 		}
-		else if (entry == "q") {
+		else if (entry == "q" || entry == "Q") {
 			system("cls");
 			break;
 		}
