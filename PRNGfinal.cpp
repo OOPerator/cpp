@@ -3,14 +3,14 @@
 #include <string>
 #include <limits>
 
-int64_t static random_int(int64_t A, int64_t B)
+int64_t random(const int64_t &A, const int64_t &B)
 {
 	static thread_local std::mt19937_64 rng(std::random_device{}());
 	std::uniform_int_distribution<int64_t> dist(A, B);
 	return dist(rng);
 }
 
-void static clear_screen()
+void clear_screen()
 {
 #ifdef _WIN32
 	std::system("cls");
@@ -21,18 +21,13 @@ void static clear_screen()
 
 int main()
 {
-start:
 	std::cout << "Press enter to generate a random 32 bit and 64 bit seed. Type any other key and then enter to clear screen. q to quit\n";
 	while (true) {
 		std::string entry;
 		std::getline(std::cin, entry);
 
 		if (entry.empty()) {
-			std::cout << random_int(std::numeric_limits<int32_t>::min(),
-				std::numeric_limits<int32_t>::max()) << "\n";
-
-			std::cout << random_int(std::numeric_limits<int64_t>::min(),
-				std::numeric_limits<int64_t>::max()) << "\n";
+			std::cout << random(std::numeric_limits<int32_t>::min(), std::numeric_limits<int32_t>::max()) << "\n" << random(std::numeric_limits<int64_t>::min(), std::numeric_limits<int64_t>::max()) << "\n";
 		}
 		else if (entry == "q" || entry == "Q") {
 			clear_screen();
@@ -40,7 +35,7 @@ start:
 		}
 		else {
 			clear_screen();
-			goto start;
+			std::cout << "Press enter to generate a random 32 bit and 64 bit seed. Type any other key and then enter to clear screen. q to quit\n";
 		}
 	}
 	return 0;
