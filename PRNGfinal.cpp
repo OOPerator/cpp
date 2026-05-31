@@ -16,7 +16,6 @@ int main()
 	while (true) {
 		std::string entry;
 		std::getline(std::cin, entry);
-
 		if (entry.empty()) {
 			std::cout << random(std::numeric_limits<int32_t>::min(), std::numeric_limits<int32_t>::max()) << "\n"
 				<< random(std::numeric_limits<int64_t>::min(), std::numeric_limits<int64_t>::max()) << "\n";
@@ -30,5 +29,5 @@ int main()
 			std::cout << "Press enter to generate a random 32 bit and 64 bit seed. Type any other key and then enter to clear screen. q to quit\n";
 		}
 	}
-	return 0;
+	return 0;	
 }
