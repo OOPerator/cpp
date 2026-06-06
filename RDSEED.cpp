@@ -8,19 +8,19 @@ std::string errormsg = "Entropy exhausted, try again";
 std::string promptmsg = "Press enter to generate a random 32 bit and 64 bit seed. Type any other key and then enter to clear screen. q to quit.\n";
 
 int32_t random32() {
-	uint32_t r32;
+	uint32_t r32 = 0;
 	for (int i = 0; i < 100; ++i) {
 		if (_rdseed32_step(&r32))
-			return static_cast<int32_t>(r32);
+			return int32_t(r32);
 	}
 	cout << errormsg; //does not need to return, will reset itself after entropy is restored.
 }
 
 int64_t random64() {
-	uint64_t r64;
+	uint64_t r64 = 0;
 	for (int i = 0; i < 100; ++i) {
 		if (_rdseed64_step(&r64))
-			return static_cast<int64_t>(r64);
+			return int64_t(r64);
 	}
 	cout << errormsg;
 }
