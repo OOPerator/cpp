@@ -2,16 +2,18 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <chrono>
 #include <random>
 #include <cstdint>
-#include <ctime>
 using std::cout;
 using std::cin;
 
-int64_t r64(int64_t min, int64_t max) {
-	thread_local std::mt19937_64 generator(std::random_device{}());
-	std::uniform_int_distribution<int64_t> rand_inRange(min, max);
-	return rand_inRange(generator);
+int64_t r64(const int64_t min, const int64_t max)
+{
+	static thread_local std::random_device rd;
+	static thread_local std::mt19937_64 generator(rd());
+	std::uniform_int_distribution<int64_t> rand(min, max);
+	return rand(generator);
 }
 
 int main()
@@ -19,14 +21,11 @@ int main()
 	int outputcount = 100000000;
 	size_t writebuffsize = 64 * 1024;
 	std::vector<char> buff(writebuffsize);
-
 	std::string entry;
 	cout << "Write RNG results to text file in this location? y/n\n";
 	std::getline(cin, entry);
 	if (entry == "y" || entry == "Y") {
-		clock_t start, end;
-		double time_elapsed;
-		start = clock();
+		auto start = std::chrono::high_resolution_clock::now();
 		std::ofstream outfile("out.txt");
 		cout << "Please wait . . .\n";
 		if (!outfile) {
@@ -34,13 +33,12 @@ int main()
 			return 1;
 		}
 		outfile.rdbuf()->pubsetbuf(buff.data(), writebuffsize);
-			for (int i = 0; i < outputcount; ++i) {
-				outfile << r64(INT64_MIN,INT64_MAX) << '\n';
-			}
-		end = clock();
-		time_elapsed = (double) (end - start) / CLOCKS_PER_SEC;
-
-		cout << "Operation completed in " << time_elapsed << " seconds.\n";
+		for (int i = 0; i < outputcount; ++i) {
+			outfile << r64(INT64_MIN, INT64_MAX) << '\n';
+		}
+		auto finish = std::chrono::high_resolution_clock::now();
+		std::chrono::duration<double> elapsed = finish - start;
+		cout << "Operation completed in " << elapsed.count() << " seconds.\n";
 	}
 	std::string pause;
 	cout << "Press enter to exit . . .";
